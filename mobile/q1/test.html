@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ios中new Date('yyyy-MM-dd')格式不支持</title>
+</head>
+
+<body>
+    <button onclick="btnclick()" style="display:block;">动态loadScript</button>
+    <script>
+        function btnclick() {
+            console.log('new Date()', new Date());
+            console.log('Date.now()', Date.now());
+            console.log('new Date().now()', new Date().now());
+            console.log('new Date().getTime()', new Date().getTime());
+            console.log(`new Date('2020/05/21 10:39')`, new Date('2020/05/21 10:30'));
+            console.log('ios支持:日期格式以/分割,不支持以-分割,转换返回NaN,如下');
+            console.log(`new Date('2020-05-21 10:39')`, new Date('2020-05-21 10:30'));
+        }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+</body>
+
+</html>
